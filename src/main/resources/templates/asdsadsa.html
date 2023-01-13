@@ -1,0 +1,137 @@
+<html layout:decorate="~{layout}"> 
+<div>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.4/tailwind.min.css">-->
+<div layout:fragment="content" class="container my-5"> 
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<H1 class="coursetextTitle">주요 관광지</H1><br><br><hr>
+<div class="content2">
+<section class="section section-faq">
+  <div class="container mx-auto">
+
+    <div class="faq-box">
+      <ul>
+        <li>
+          <div class="faq-box__question"><span><img th:src="@{/img/2.jpg}" />ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span></div>
+          <div class="faq-box__answer">
+            <div>
+              - 젊음의 거리, 문화의 거리로 알려진 대학로의 중심에 문화예술진흥원ㅇㄴㄹㄹㄴㅇㄹ
+              </div>
+            <div>
+              - ㅇㅇㅇㅇㅇㅇㅇ
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="faq-box__question"><span><img th:src="@{/img/2.jpg}" />ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span></div>
+          <div class="faq-box__answer">
+            <div>
+              - ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section section-faq">
+  <div class="container mx-auto">
+
+    <div class="faq-box">
+      <ul>
+        <li>
+          <div class="faq-box__question"><span><img th:src="@{/img/2.jpg}" />ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span></div>
+          <div class="faq-box__answer">
+            <div>
+              - ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+              </div>
+            <div>
+              - ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="faq-box__question"><span><img th:src="@{/img/2.jpg}" />ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</span></div>
+          <div class="faq-box__answer">
+            <div>
+              - ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+<script>
+function FaqBox__init() {
+  $('.faq-box > ul > li').click(function() {
+    let $this = $(this);
+    
+    $this.siblings('.hover').find(' > .faq-box__answer').stop().slideUp(300); 
+    $this.siblings('.hover').removeClass('hover');
+    
+    if ( $this.hasClass('hover') ) {
+      $this.find(' > .faq-box__answer').stop().slideUp(300); 
+      $this.removeClass('hover');
+    }
+    else {
+      $this.find(' > .faq-box__answer').stop().slideDown(300); 
+      $this.addClass('hover');
+    }
+  });
+  
+  $('.faq-box__answer').click(function() {
+    return false;
+  });
+}
+
+FaqBox__init();	
+	
+</script>
+
+<style>
+  .faq-box {
+  background-color:#fff;
+  color:inherit;
+  padding:10px;
+}
+
+.faq-box__question {
+  cursor:pointer;
+}
+
+.faq-box__question::after {
+  content:"▼";
+  float:left;
+}
+
+.faq-box > ul > li {
+  padding:10px;
+}
+
+.faq-box > ul > li.hover > .faq-box__question::after {
+  content:"▲";
+}
+
+.faq-box__answer {
+  display:none;
+  background-color:rgba(0,0,0,0.3);
+  border-radius:10px;
+  padding:10px;
+}
+.faq-box ul li {
+	list-style:none;
+}
+</style>
+
+
+
+</div>
+</body>

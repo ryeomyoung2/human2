@@ -1,0 +1,74 @@
+<html layout:decorate="~{layout}">
+
+<div layout:fragment="content" class="container my-5">
+	
+	<br><br>
+    <table class="courseTable" style="border-left: none; border-right: none;">
+		<th style="border-left: none;">코스</th>
+		<th>지역</th>
+		<th>거리</th>
+		<th>소요시간</th>
+		<th style="border-right: none;">난이도</th>
+		<tr>
+		    <td style="border-left: none; cursor:hand; cursor:pointer;" class="content" onClick="location.href='/home/course/course1'">1코스-수락·불암산코스</td>
+		    <td class="content">노원구,도봉구</td>
+		    <td class="content">18.6km</td>
+		    <td class="content">8시간 10분</td>
+		    <td style="border-right: none;"><img th:src="@{/img/hard.jpg}" /></td>
+		</tr>
+		<tr>
+		    <td style="border-left: none; cursor:hand; cursor:pointer;" class="content" onClick="location.href='/home/course/course2'">2코스-용마·아차산코스</tdstyle="border-left: none;">
+		    <td class="content">광진구,중랑구</td>
+		    <td class="content">12.3km</td>
+		    <td class="content">5시간 10분</td>
+		    <td style="border-right: none;"><img th:src="@{/img/normal.jpg}" /></td>
+		</tr>
+		<tr>
+		    <td style="border-left: none; cursor:hand; cursor:pointer;" class="content" onClick="location.href='/home/course/course3'">3코스-고덕·일자산코스</td>
+		    <td class="content">강동구,송파구</td>
+		    <td class="content">25.6㎞</td>
+		    <td class="content">8시간 50분</td>
+		    <td style="border-right: none;"><img th:src="@{/img/easy.jpg}" /></td>
+		</tr>
+		<tr>
+		    <td style="border-left: none; cursor:hand; cursor:pointer;" class="content" onClick="location.href='/home/course/course4'">4코스-대모·우면산코스</td>
+		    <td class="content">강남구,서초구</td>
+		    <td class="content">18.3㎞</td>
+		    <td class="content">8시간 10분</td>
+		    <td style="border-right: none;"><img th:src="@{/img/normal.jpg}" /></td>
+		</tr>
+		<tr>
+		    <td style="border-left: none; cursor:hand; cursor:pointer;" class="content" onClick="location.href='/home/course/course5'">5코스-관악·호암산코스</td>
+		    <td class="content">관악구,금천구</td>
+		    <td class="content">13.0㎞</td>
+		    <td class="content">6시간</td>
+		    <td style="border-right: none;" ><img th:src="@{/img/normal.jpg}" /></td>
+		</tr>
+		<tr>
+		    <td style="border-left: none; cursor:hand; cursor:pointer;" class="content" onClick="location.href='/home/course/course6'">6코스-안양천·한강코스</td>
+		    <td class="content">강서구,구로구,금천구,영등포구</td>
+		    <td class="content">18.2km</td>
+		    <td class="content">4시간 30분</td>
+		    <td style="border-right: none;"><img th:src="@{/img/easy.jpg}" /></td>
+		</tr>
+		<tr>
+		    <td style="border-left: none; cursor:hand; cursor:pointer;" class="content" onClick="location.href='/home/course/course7'">7코스-봉산·앵봉산코스</td>
+		    <td class="content">마포구,은평구</td>
+		    <td class="content">16.8km</td>
+		    <td class="content">6시간 25분</td>
+		    <td style="border-right: none;"><img th:src="@{/img/normal.jpg}" /></td>
+		</tr>
+		<tr>
+		    <td style="border-left: none; cursor:hand; cursor:pointer;" class="content" onClick="location.href='/home/course/course8'">8코스-북한·도봉산코스</td>
+		    <td class="content">강북구,도봉구,성북구,은평구,종로구</td>
+		    <td class="content">33.7km</td>
+		    <td class="content">16시간 30분</td>
+		    <td style="border-right: none;"><img th:src="@{/img/normal.jpg}" /></td>
+		</tr>
+    </table>
+	
+
+	
+</div>
+
+</html>

@@ -1,0 +1,334 @@
+/*폰트*/
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  font-family: "SUIT-Regular";
+}
+
+/*
+textarea{
+	width: 100%;
+	height: 8.25em;
+	border-width:1;
+	border-color:#808080;
+	border-radius: 10px;
+	resize:none;
+}*/
+
+/* 네비게이션 바 */
+.nav-link{
+	color:white;
+	font-size: 28px;
+}
+.nav-link:visited{
+	color:white;
+}
+.nav-link:hover{
+	color:black;
+}
+.nav-item{
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+/*임여명*/
+p{
+	font-size:15px;
+	line-height: 1px;
+	margin-left: 25px;
+	padding-top: 3px;
+}
+.lowtemp{
+	font-size:12px;
+	line-height: 1px;
+}
+.hightemp{
+	font-size:12px;
+	line-height: 1px;
+}
+ .SceneryImg {
+        text-align: center;
+}
+.layout{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.qna{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.qna > li{
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+.qna > li:nth-child(n+2){ /* 아이템 구분 점선 */
+  border-top: 1px dashed #aaa;
+}
+.qna input {
+  display: none;
+}
+
+.qna label { /* 제목 - 클릭 영역 */
+  font-weight: bold;
+  color: #000;
+  margin: 20px 0 0;
+  cursor: pointer;
+}
+.qna label::before { /* 제목 앞 화살표 */
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-left: 8px solid #a00;
+  margin: 2px 0 0 8px;
+  float: left;
+}
+.qna input:checked + label::before { /* 내용 펼침 상태 제목 앞 화살표 */
+  border: 8px solid transparent;
+  border-top: 8px solid #a00;
+  border-bottom: 0;
+  margin: 8px 4px 0;
+}
+
+.qna div { /* 내용 영역 - 기본 감춤 상태 */
+  display: none;
+  color: #666;
+  font-size: 0.9375em;
+  overflow: hidden;
+  padding: 10px 0 10px 30px;
+  box-sizing: border-box;
+  transition: max-height 0.4s;
+}
+.qna input:checked + label + div { /* 내용 영역 펼침 */
+  display: block;
+}
+.background {
+    width: 1205px;
+    height: 600px;
+    padding: 50px 0px 0px 20px;
+    margin-left:auto;
+	margin-right:auto;
+    background-repeat: no-repeat;
+}
+ .mainPage {
+    box-sizing: border-box;   
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+}
+ .mainPage02 {
+    box-sizing: border-box;   
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+}
+ .mainPage03 {
+    box-sizing: border-box;   
+     display: flex;
+     flex-direction: row;
+     justify-content:flex-start;
+     padding-left: 37%;
+}
+ .alignment {
+     text-indent: 37%;
+}
+
+.introduceTitle{
+	font-weight:900;
+	font-size:30px;
+	line-height: 1px;
+}
+ .subtitle {
+   color: #6B8E23;
+   font-weight:900;
+}
+ .content {
+   color : dimgrey;
+   font-size:14px;	
+   line-height: 9px;
+}
+ .content2 {
+    box-sizing: border-box;   
+     display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+}
+ .content3 {
+    box-sizing: border-box;   
+     display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+}
+.courseTable{
+	 border: 3px solid darkgray;
+	 width: 900px;
+	 height: 400px;
+	 margin-left:auto;
+	 margin-right:auto;
+	 text-align: center;	 
+}
+th, td {
+    border: 1px solid darkgray;
+
+  }
+.button {
+	width: 100px;
+	height: 50px;
+	border-radius: 10%; 
+	transition-duration: 0.4s;
+	border: 1px solid #CACACA
+
+  }
+.button:hover {
+	background-color: #555555;
+	color: white;
+}
+/* course1.html ~ course8.html */
+.coursetext {
+	text-align: center;
+}
+.coursetextTitle {
+	font-weight:900;
+	font-size:40px;
+
+}
+.coursetextSubText {
+	font-size:20px;
+
+}
+.coursetextSubText2 {
+	font-weight:600;
+	font-size:20px;
+ 
+}
+.coursetextSubText3 {
+   color : dimgrey;
+   font-size:17px;	
+ 
+}
+.coursetextSubText4 {
+	font-weight:100;
+	font-size:16px;	
+ 
+}
+.hrheight{
+	border: 0;
+    height: 20px;
+    background: black
+}
+  .faq-box {
+  background-color:#fff;
+  color:inherit;
+  padding:10px;
+}
+
+.faq-box__question {
+  cursor:pointer;
+}
+
+.faq-box__question::after {
+  content:"▶";
+  float:left;
+}
+
+.faq-box > ul > li {
+  padding:10px;
+}
+
+.faq-box > ul > li.hover > .faq-box__question::after {
+  content:"▲";
+}
+
+.faq-box__answer {
+  display:none;
+  background-color:rgba(0,0,0,0.3);
+  border-radius:10px;
+  padding:10px;
+}
+.faq-box ul li {
+	list-style:none;
+}
+.tourlistspotimg {
+	 border-radius: 5%
+}
+/* course1.html ~ course8.html */
+/*임여명*/
+
+/* 메인화면 */
+.maincourse{
+	color : black;
+	text-decoration : none;
+	font-size: 17px;
+}
+
+/* 로그인 영역, 추천코스 css */
+.divmp{
+	margin : 10px;
+	padding : 5px;
+}
+.hometext{
+	font-size : 35px;
+	text-decoration : none;
+	color : black;
+}
+.hometext:hover{
+	color : darkgrey;
+}
+
+.logincontainer{
+	text-align: center;
+	width:100%;
+	margin-top:180px;
+}
+.img-responsive{
+	max-width: 40%;
+	height:auto;
+}
+.sociallogin{
+	margin-bottom: 4vw;
+}
+
+/* 추천코스 영역 */
+.rcmcontainer{
+	padding:100px;
+	display:flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.login-out{
+	font-size : 30px;
+	text-decoration: none;
+	color : black;
+}
+
+.rcmcard{
+	width: 45%;
+	margin-bottom:100px;
+	display:flex;
+	justify-content: center;
+	flex-flow: column;
+	text-align: center;
+}
+.rcmcardimg{
+	margin:0px;
+	border-radius:15%;
+}
+.rcmdardtitle{
+	font-size: 2.7vw;
+	margin-bottom: 25px;
+	margin-right: 18px;
+}
+

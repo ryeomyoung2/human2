@@ -1,0 +1,139 @@
+<html layout:decorate="~{layout}"> 
+<body>
+<div layout:fragment="content" class="container my-5">
+    <div style="border: solid darkgrey 2px; border-radius:2%">
+		
+		<div style="margin: 10px; margin-bottom: 15px;">
+			<h2 style="padding : 20px; margin-left:20px">그밖의 길</h2>
+		</div>
+		
+		<!--<form method="get">-->
+		<form method="get" action="form-action" id="formid">
+			<div class="mainPage02">
+		    	<div class="form-group col-sm-5">
+		          <label for="addressKindU">지역 선택</label>
+		          <select class="form-control" id="addressKindU" name="addressKindU" onchange="addressKindChange(this)">
+		            <!--<option>강북권/강남권 선택</option>-->
+		            <option selected value="default">강북권/강남권 선택</option>		            		            
+		            <option value="강남">강남</option>
+		            <option value="강북">강북</option>
+		          </select>
+		        </div>
+		        
+		        <div class="form-group col-sm-4">
+		          <label for="addressKindD"></label>
+		          <select class="form-control" id="addressKindD" name="addressKindD">
+		            <option value="default">선택해주세요.</option>
+		          </select>
+		        </div>
+        	</div>
+        <br>
+        
+       	  
+	      
+	      <div class="alignment">코스길이</div>
+	      <div class="mainPage03">
+		      <label><input type="radio" name="distance" value="5under"> 5km 미만</label>&nbsp;&nbsp;&nbsp;
+		      <label><input type="radio" name="distance" value="5between10"> 5~10km</label>&nbsp;&nbsp;&nbsp;
+		      <label><input type="radio" name="distance" value="10over"> 10km 초과</label>
+	      </div>
+		  <br>
+	      
+	      <div class="alignment">소요시간</div>
+	      <div class="mainPage03">
+		      <label><input type="radio" name="duration" value="2under"> 2시간 미만</label>&nbsp;&nbsp;&nbsp;
+		      <label><input type="radio" name="duration" value="2between4"> 2~4시간</label>&nbsp;&nbsp;&nbsp;
+		      <label><input type="radio" name="duration" value="4over"> 4시간 초과</label>
+	      </div>
+	      
+	      <br>
+	      <div class="alignment">난이도</div>
+	      <div class="mainPage03">
+		      <label><input type="radio" name="difficulty" value="초급"> 초급</label>&nbsp;&nbsp;&nbsp;
+		      <label><input type="radio" name="difficulty" value="중급"> 중급</label>&nbsp;&nbsp;&nbsp;
+		      <label><input type="radio" name="difficulty" value="고급"> 고급</label>
+	      </div>
+	      <br><br><br>
+	      <div class="mainPage02">
+	      	<input class="button" type="button" onClick="sub()" value="검색">&nbsp;&nbsp;<input class="button" type="reset" value="초기화">
+	      </div>  
+	    </form>
+	
+	</div> 
+	   
+<script language="JavaScript">
+	function addressKindChange(e) {
+    var gangbuk = ["노원구", "도봉구", "강북구", "광진구", "동대문구", "마포구", "서대문구", "성동구", "성북구", "용산구", "은평구", "종로구", "중구", "중랑구"];
+    var gangnam = ["강남구", "강동구", "강서구", "관악구", "구로구", "금천구", "동작구", "서초구", "송파구", "양천구", "영등포구"];
+    var target = document.getElementById("addressKindD");
+
+    if(e.value == "강북") var d = gangbuk;
+    else if(e.value == "강남") var d = gangnam;
+
+
+    target.options.length = 0;
+
+    for (x in d) {
+        var opt = document.createElement("option");
+        opt.value = d[x];
+        opt.innerHTML = d[x];
+        target.appendChild(opt);
+    }   
+}
+
+	function sub() { // form submit 하기 전 유효성 검사하기 위해 함수사용
+		var distance_len = 0; //각각의 라디오 버튼 체크 확인 변수
+		var duration_len = 0;	
+		var difficulty_len = 0;	
+		var formid = document.getElementById("formid"); // form을 컨트롤 하기 위해 form에 id 추가
+		var select = document.getElementById("addressKindU"); //select 태그 컨트롤 하기 위해 변수 생성
+		var select = document.getElementById("addressKindD");
+		var distance = document.getElementsByName('distance');//라디오 태그 컨트롤 하기 위해 변수 생성
+		var duration = document.getElementsByName('duration');
+		var difficulty = document.getElementsByName('difficulty');
+		console.log(distance.length); //3, 거리 라디오 버튼의 총 수 확인용
+		for(i=0; i<distance.length; i++){ //거리 라디오 버튼의 수만큼 반복해서 체크
+			if(distance[i].checked){ // 라디오 버튼을 가져올때 배열로 가져왔기 때문에 배열 사용해서 체크 되어 있는지 확인
+				console.log("true"); // 체크 되어있으면 콘솔로그 true 출력
+				distance_len++; // 체크 되어있으면 변수에 +1 이하 소요시간, 난이도 동일
+			}	
+		}
+		for(i=0; i<duration.length; i++){
+			if(duration[i].checked){
+				console.log("true");
+				duration_len++;
+			}	
+		}
+		for(i=0; i<difficulty.length; i++){
+			if(difficulty[i].checked){
+				console.log("true");
+				difficulty_len++;
+			}	
+		}
+	// 여기까지가 거리,소요시간,난이도 체크되어있는지 확인해서 변수에 +1 시킨 코드
+	// 다음은 셀렉트박스 및 라디오 유효성 검사
+		if(select.value == "default"){ // 셀렉트 박스 기본값 추가, 셀렉트 박스의 값이 기본값이면 선택해달라는 alert 출력
+			alert("강북권/강남권을 선택해주세요.");
+		}else if(select.value == "default"){ 
+	        alert("자치구를 선택해주세요.");
+	    }else if(select.value == 0){ 
+	        alert("자치구를 선택해주세요.");
+		}else if(distance_len == 0){ // 거리 라디오 박스에서 체크가 되어있으면 distance_len 이 1이 되어야 함. 그런데 0 이라는 결과값은 체크가 안되어 있다는 뜻		
+	        alert("거리를 선택해주세요."); // 거리 라디오 체크해달라고 alert 출력..이하 반복작업
+		}else if(duration_len == 0){// 소요시간 체크
+			alert("소요시간을 선택해주세요");
+		}else if(difficulty_len == 0){//난이도 체크
+			alert("난이도를 선택해주세요")	;
+		}else{
+			formid.submit();//위 과정을 모두 통과했으면 form을 submit  시킴
+		}
+	}
+
+
+</script>
+</div>
+
+
+
+</body>
+</html>

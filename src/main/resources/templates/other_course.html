@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+
+</head>
+   
+<body>
+<div layout:fragment="content" class="container my-5">
+  
+
+ 
+	 	<table class="courseTable" style="border-left: none; border-right: none;">
+		    <thead>
+		        <tr>
+		            <th style="border-left: none;">구분</th>
+		            <th>자치구</th>
+		            <th>코스길이(km)</th>
+		            <th>소요시간(분)</th>
+		            <th>난이도</th>
+		            <th>코스명</th>
+		            <th style="border-right: none;"></th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr th:each="list : ${ocList}">
+		            <td style="border-left: none;" th:text="${list.courseDivision}"></td>
+		            <td th:text="${list.courseBorough}"></td>
+		            <td th:text="${list.courseDistance}"></td>
+		            <td th:text="${list.estimatedDuration}"></td>
+		            <td th:text="${list.courseDifficulty}"></td>
+		            <td th:text="${list.courseName}"></td>
+		            <!--<td style="border-right: none;" th:text="${list.img}"></td>-->
+		         	<td style="border-right: none;"><img th:src="${list.img}"/></td>
+		        </tr>
+		    </tbody>
+		</table>
+
+
+</div>
+</body>
+</html>
